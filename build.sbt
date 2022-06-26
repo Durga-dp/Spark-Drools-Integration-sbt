@@ -3,13 +3,13 @@ ThisBuild / version := "0.1.0-SNAPSHOT"
 ThisBuild / scalaVersion := "2.11.8"
 
 
-libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.2.0"
+libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.2.0" % "provided"
 
-libraryDependencies += "org.drools" % "drools-core" % "7.17.0.Final"
-libraryDependencies += "org.drools" % "drools-compiler" % "7.17.0.Final"
+//libraryDependencies += "org.drools" % "drools-core" % "7.17.0.Final"
+//libraryDependencies += "org.drools" % "drools-compiler" % "7.17.0.Final"
 
-//libraryDependencies += "org.drools" % "drools-core" % "8.22.1.Beta"
-//libraryDependencies += "org.drools" % "drools-compiler" % "8.22.1.Beta"
+libraryDependencies += "org.drools" % "drools-core" % "8.22.1.Beta"
+libraryDependencies += "org.drools" % "drools-compiler" % "8.22.1.Beta"
 
 libraryDependencies += "junit" % "junit" % "4.13.2" //% Test
 
@@ -22,3 +22,7 @@ lazy val root = (project in file("."))
     name := "SimpleSparkProject"
   )
 
+assemblyMergeStrategy in assembly := {
+  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+  case x => MergeStrategy.first
+}

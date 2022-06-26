@@ -1,3 +1,9 @@
+***to run using spark submit**
+step1:sbt assembly
+step2:spark-submit --master local[2] --class SparkDroolsIntTest SimpleSparkProject-assembly-0.1.0-SNAPSHOT.jar
+
+***to run using spark submit**
+
 took this source from https://github.com/saikrishnapujari/Spark-Drools-Integration
 and converted from maven to sbt project.
 No other changes made.
@@ -36,3 +42,4 @@ at org.drools.compiler.builder.impl.KnowledgeBuilderImpl.add(KnowledgeBuilderImp
 at org.drools.compiler.builder.impl.KnowledgeBuilderImpl.add(KnowledgeBuilderImpl.java:2172)
 at TrafficRulesTest.<init>(TrafficRulesTest.scala:16)
 at SparkDroolsIntTest$.$anonfun$testFun$1(SparkDroolsIntTest.scala:25)
+
